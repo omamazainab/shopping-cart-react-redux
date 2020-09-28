@@ -1,0 +1,9 @@
+.product_card{
+    margin: 30px 15px;
+    /* border: 2px solid red; */
+    padding: 0 !important;
+}
+
+.product_image{
+    width: 100%;
+}
