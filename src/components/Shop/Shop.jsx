@@ -35,10 +35,7 @@ const Shop = () => {
     
   ]
 
-  const addToCart = e => {
-    e.preventDefault();
-
-  }
+  
 
   return (
     <Container className="text-center">
@@ -54,7 +51,9 @@ const Shop = () => {
               <a href="/">{product.name}</a>
               <div><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/></div>
               <div>${product.price}</div>
-              <button onClick={addToCart}>+ Add to cart </button>
+              <button onClick={() => {
+                            dispatch(add_product_action({ qty: 1, ...product }))
+                        }}>+ Add to cart </button>
               
             </Col>)
           })

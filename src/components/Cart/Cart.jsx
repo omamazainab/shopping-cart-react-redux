@@ -4,9 +4,8 @@ import { useSelector } from "react-redux";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.items);
 
-  const cart = useSelector((state) => state.cart);
-  
   return (
     <Container>
       <Row>
@@ -22,6 +21,7 @@ const Cart = () => {
                   alt={product.name}
                 />
               </Col>
+          <h1>{product.qty}</h1>
             </div>
           );
         })}
