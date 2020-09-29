@@ -1,4 +1,4 @@
-import { add_product, del_product, increment, decrement } from './Action'
+import { add_product, del_product } from './Action'
 const initialState = {
     items: []
 }
@@ -16,23 +16,14 @@ export default function (state = initialState, action) {
             }else{
                 state.items.push(action.payload)
             }
-        // case del_product:
-        //     return {
-        //         ...state,
-        //         cart: state.cart.filter(product => product.id === action.payload)
-        //     }
-        // case increment:
-        //     state.cart.map(product => (product.id === action.payload ? (product.quantity += 1, true) : false))
-        //     return {
-        //         ...state,
-        //         cart: state.cart
-        //     }
-        // case decrement:
-        //     state.cart.map(product => (product.id === action.payload ? (product.quantity -= 1, true) : false))
-        //     return {
-        //         ...state,
-        //         cart: state.cart
-        //     }
+        case del_product:
+            return {
+                
+                items : state.items.filter(
+                    (item) => item.id !== action.payload
+                )
+            }
+        
         default:
             return state
     }

@@ -1,10 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { delete_product_action } from "../../Context/Action";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
   const cart = useSelector((state) => state.items);
+  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -21,7 +23,14 @@ const Cart = () => {
                   alt={product.name}
                 />
               </Col>
-          <h1>{product.qty}</h1>
+              <h1>{product.qty}</h1>
+              <button
+                onClick={()=>{
+                  dispatch(delete_product_action(product.id))
+                }}
+              >
+                x
+              </button>
             </div>
           );
         })}
