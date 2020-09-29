@@ -24,7 +24,7 @@ const Example = () => {
     <div>
       <Navbar expand="md" className={styles.navbar}>
         <NavbarBrand href="/" className={styles.nav_brand}>Shopping <span className={styles.black}>Cart.</span> </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler onClick={toggle} className={styles.nav_toggler} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mx-auto" navbar>
             <NavItem className={styles.nav_item}>

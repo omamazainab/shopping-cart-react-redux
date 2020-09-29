@@ -4,7 +4,7 @@
 }
 
 .nav_brand{
-    font-size: 2rem !important;
+    /* font-size: 2rem !important; */
     font-weight: 900;
     color: red !important;
 }
@@ -23,3 +23,13 @@
     padding-right: 1.5rem;
 }
 
+.nav_toggler{
+    background-image: url(https://salty-plateau-62097.herokuapp.com/static/media/menu.6e5e1454.svg);
+    border: 2px solid black;
+}
+
+@media (max-width: 768px) { 
+    .nav_item{
+        margin: 10px;
+    }
+}

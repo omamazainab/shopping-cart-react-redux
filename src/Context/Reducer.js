@@ -8,22 +8,26 @@ export default function (state = initialState, action) {
         case add_product:
             const allCartItems = state.items;
             const cartItemIndex = allCartItems.findIndex(item => item.id === action.payload.id)
-            if(cartItemIndex !== -1){ // if the product is present in the cart
+            if (cartItemIndex !== -1) { // if the product is present in the cart
                 state.items[cartItemIndex] = {
                     ...action.payload,
-                    qty : state.items[cartItemIndex].qty + 1
+                    qty: state.items[cartItemIndex].qty + 1
                 }
-            }else{
+            } else {
                 state.items.push(action.payload)
+            }
+            return{
+                ...state, 
+                items: state.items
             }
         case del_product:
             return {
-                
-                items : state.items.filter(
+                ...state,
+                items: state.items.filter(
                     (item) => item.id !== action.payload
                 )
             }
-        
+
         default:
             return state
     }

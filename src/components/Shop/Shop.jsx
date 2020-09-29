@@ -3,51 +3,27 @@ import { Container, Row, Col } from "reactstrap";
 import { AiOutlineStar } from "react-icons/ai";
 import { add_product_action } from "../../Context/Action";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { idGenerator } from "../../utils/idGenerator";
+import products from '../../product.json'
 import styles from "./Shop.module.css";
 
 const Shop = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
 
-  const products = [
-    {
-      id: 1,
-      name: "product a",
-      price: 200,
-      image:
-        "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=895&q=80",
-    },
-    {
-      id: 2,
-      name: "product b",
-      price: 200,
-      image:
-        "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=895&q=80",
-    },
-    {
-      id: 3,
-      name: "product c",
-      price: 200,
-      image:
-        "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=895&q=80",
-    },
-  ];
-
+  
+  
   return (
     <Container className="text-center">
-      <Row>
+      <Row className="text-center">
         {products.map((product) => {
           return (
             <Col
               className={styles.product_card}
               key={product.id}
-              md={{ size: 3 }}
+              md={{ size: 4 }}
             >
               <img
                 className={styles.product_image}
-                src={product.image}
+                src={product.images[0]}
                 alt={product.name}
               />
               <a href="/">{product.name}</a>

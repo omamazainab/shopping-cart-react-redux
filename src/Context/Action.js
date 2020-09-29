@@ -18,16 +18,4 @@ export const delete_product_action = (id) => (
     }
 )
 
-export const increment_action = (id) => (
-    {
-        type: increment,
-        payload: id
-    }
-)
 
-export const decrement_action = (id) => (
-    {
-        type: decrement,
-        payload: id
-    }
-)    
