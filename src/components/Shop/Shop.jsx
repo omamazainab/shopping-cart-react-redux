@@ -21,7 +21,7 @@ const Shop = () => {
               key={product.id}
               md={{ size: 4 }}
             >
-              <Link to={`/shop/${product.id}`} className={styles.nav_link}>
+              {/* <Link to={`/shop/${product.id}`} className={styles.nav_link}> */}
                 <img
                   className={styles.product_image}
                   src={product.images[0]}
@@ -37,7 +37,7 @@ const Shop = () => {
                   <AiOutlineStar />
                 </div>
                 <div>${product.price}</div>
-              </Link>
+              {/* </Link> */}
               <button
                 onClick={() => {
                   dispatch(add_product_action({ qty: 1, ...product }));
