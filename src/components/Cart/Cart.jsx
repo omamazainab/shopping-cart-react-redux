@@ -39,7 +39,7 @@ const Cart = () => {
                         className={styles.cart_thumbnail}
                       />
                       <button onClick={()=>{
-                        dispatch(delete_product_action)
+                        dispatch(delete_product_action(product.id))
                       }}>
                         x
                       </button>
