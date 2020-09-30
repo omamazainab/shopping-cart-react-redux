@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { AiOutlineStar } from "react-icons/ai";
 import { add_product_action } from "../../Context/Action";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import products from "../../product.json";
 import styles from "./Shop.module.css";
 

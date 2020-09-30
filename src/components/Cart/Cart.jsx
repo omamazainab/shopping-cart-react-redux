@@ -38,6 +38,11 @@ const Cart = () => {
                         alt={product.name}
                         className={styles.cart_thumbnail}
                       />
+                      <button onClick={()=>{
+                        dispatch(delete_product_action)
+                      }}>
+                        x
+                      </button>
                     </td>
                   </tr>
                 );
