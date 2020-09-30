@@ -35,32 +35,3 @@ const counterSlice = createSlice({
 export const { add_product, del_product } = counterSlice.actions
 export default counterSlice.reducer
 
-// export default function (state = initialState, action) {
-//     switch (action.type) {
-//         case add_product:
-//             const allCartItems = state.items;
-//             const cartItemIndex = allCartItems.findIndex(item => item.id === action.payload.id)
-//             if (cartItemIndex !== -1) { // if the product is present in the cart
-//                 state.items[cartItemIndex] = {
-//                     ...action.payload,
-//                     qty: state.items[cartItemIndex].qty + 1
-//                 }
-//             } else {
-//                 state.items.push(action.payload)
-//             }
-//             return{
-//                 ...state, 
-//                 items: state.items
-//             }
-//         case del_product:
-//             return {
-//                 ...state,
-//                 items: state.items.filter(
-//                     (item) => item.id !== action.payload
-//                 )
-//             }
-
-//         default:
-//             return state
-//     }
-// }
