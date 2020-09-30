@@ -6,12 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import Store from './Context/Store'
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
+
   <Provider store={Store}>
-   
+    <BrowserRouter>
       <App />
-    
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
