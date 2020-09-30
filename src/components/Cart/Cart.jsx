@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col, Table } from "reactstrap";
-import { del_product } from "../../Context/Reducer";
+import { del_product, clear_cart } from "../../Context/Reducer";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
@@ -13,7 +13,7 @@ const Cart = () => {
 
   return (
     <Container>
-      <h1 className="text-center my-3">Cart</h1>
+      <h1 className="text-center my-5">Cart</h1>
       <Row>
         <Col md={8}>
           <Table>
@@ -54,6 +54,11 @@ const Cart = () => {
               })}
             </tbody>
           </Table>
+          <button onClick={()=>{
+            dispatch(clear_cart())
+          }}> 
+            clear cart
+          </button>
         </Col>
         <Col md={4}>
           <Table>
@@ -81,8 +86,10 @@ const Cart = () => {
               </tr>
             </tbody>
           </Table>
+         
         </Col>
       </Row>
+  
     </Container>
   );
 };

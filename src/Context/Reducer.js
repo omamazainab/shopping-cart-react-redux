@@ -26,12 +26,15 @@ const counterSlice = createSlice({
                 state.items = state.items.filter(
                     (item) => item.id !== action.payload
                 )
+        },
+        clear_cart: (state,action) => {
+            state.items = []
         }
 
     }
 
 })
 
-export const { add_product, del_product } = counterSlice.actions
+export const { add_product, del_product, clear_cart } = counterSlice.actions
 export default counterSlice.reducer
 
