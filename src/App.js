@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Route,
   Routes
 } from "react-router-dom";
@@ -13,7 +13,7 @@ import Cart from './components/Cart/Cart'
 function App() {
   return (
     <div className="App">
-      <Router>
+      
         <Navbar />
         <Routes>
           <Route path="/" element={<Home></Home>} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/cart" element={<Cart></Cart>} />
           <Route path="*" element={<h1>not found</h1>} />
         </Routes>
-      </Router>
+     
 
     </div>
   );
