@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col, Table } from "reactstrap";
-import { delete_product_action } from "../../Context/Action";
+import { del_product } from "../../Context/Reducer";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
@@ -23,12 +23,13 @@ const Cart = () => {
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>image</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               {cart.map((product) => {
                 return (
-                  <tr>
+                  <tr key={product.id}>
                     <td>{product.name}</td>
                     <td>{product.price}</td>
                     <td>{product.qty}</td>
@@ -38,9 +39,13 @@ const Cart = () => {
                         alt={product.name}
                         className={styles.cart_thumbnail}
                       />
-                      <button onClick={()=>{
-                        dispatch(delete_product_action(product.id))
-                      }}>
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          dispatch(del_product(product.id));
+                        }}
+                      >
                         x
                       </button>
                     </td>
@@ -50,7 +55,7 @@ const Cart = () => {
             </tbody>
           </Table>
         </Col>
-        <Col md={4} >
+        <Col md={4}>
           <Table>
             <thead>
               <tr>
@@ -67,8 +72,12 @@ const Cart = () => {
                 <td>$10</td>
               </tr>
               <tr>
-                <td><h5>Total</h5></td>
-                <td><h5>${totalPrice !== 0? totalPrice +10 : 0}</h5></td>
+                <td>
+                  <h5>Total</h5>
+                </td>
+                <td>
+                  <h5>${totalPrice !== 0 ? totalPrice + 10 : 0}</h5>
+                </td>
               </tr>
             </tbody>
           </Table>

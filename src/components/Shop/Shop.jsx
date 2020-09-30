@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { AiOutlineStar } from "react-icons/ai";
-import { add_product_action } from "../../Context/Action";
+import { add_product } from "../../Context/Reducer";
 import { useDispatch } from "react-redux";
 // import { Link } from "react-router-dom";
 import products from "../../product.json";
@@ -40,7 +40,7 @@ const Shop = () => {
               {/* </Link> */}
               <button
                 onClick={() => {
-                  dispatch(add_product_action({ qty: 1, ...product }));
+                  dispatch(add_product({ qty: 1, ...product }));
                 }}
               >
                 + Add to cart{" "}
