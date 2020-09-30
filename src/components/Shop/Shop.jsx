@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { AiOutlineStar } from "react-icons/ai";
 import { add_product_action } from "../../Context/Action";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import products from '../../product.json'
 import styles from "./Shop.module.css";
 
@@ -15,18 +16,24 @@ const Shop = () => {
     <Container className="text-center">
       <Row className="text-center">
         {products.map((product) => {
+         
           return (
+            
             <Col
               className={styles.product_card}
               key={product.id}
               md={{ size: 4 }}
             >
+              <Link to={`/shop/${product.id}`} className={styles.nav_link}>
+                
+              
               <img
                 className={styles.product_image}
                 src={product.images[0]}
                 alt={product.name}
               />
-              <a href="/">{product.name}</a>
+
+              <div href="/">{product.name}</div>
               <div>
                 <AiOutlineStar />
                 <AiOutlineStar />
@@ -35,6 +42,7 @@ const Shop = () => {
                 <AiOutlineStar />
               </div>
               <div>${product.price}</div>
+              </Link>
               <button
                 onClick={() => {
                   dispatch(add_product_action({ qty: 1, ...product }));
@@ -42,6 +50,9 @@ const Shop = () => {
               >
                 + Add to cart{" "}
               </button>
+
+              
+
             </Col>
           );
         })}

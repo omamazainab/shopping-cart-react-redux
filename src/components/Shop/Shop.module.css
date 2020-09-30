@@ -8,3 +8,9 @@
     width: 100%;
     padding: 10px;
 }
+
+.nav_link, .nav_link:hover {
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+}
