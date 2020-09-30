@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
+import CartBadge from './CartBadge'
 import {
   Collapse,
   Navbar,
@@ -10,18 +11,14 @@ import {
   NavbarText,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import { Badge } from "reactstrap";
-import { AiOutlineShopping } from "react-icons/ai";
-import { useSelector } from "react-redux";
+
 
 const Example = () => {
-  const cartState = useSelector((state) => state.items);
+  
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-
-  console.log(cartState.length);
 
   return (
     <div>
@@ -46,12 +43,7 @@ const Example = () => {
           </Nav>
           <NavbarText>
             <Link to="/cart" className={styles.nav_link}>
-              <AiOutlineShopping size={25} />
-              {cartState.length > 0 && (
-                <Badge color="success" pill>
-                  {cartState.length}
-                </Badge>
-              )}
+              <CartBadge/>
             </Link>{" "}
           </NavbarText>
         </Collapse>
